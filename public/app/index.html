@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div id="films-container"></div>
-    <div id="film-details-container">details should be here</div>
+    <div id="films-container">
+        <input id="add" type="button" value="Add Film">
+    </div>
+    <div id="film-details-container"></div>
     <script type="text/template" id="film-template">
         <a href="#film/<%= id %>" class="film-id"><%= id %></a>
         <span class="film-name"><%= name %></span>
@@ -15,16 +17,21 @@
     </script>
 
     <script type="text/template" id="film-details-template">
+        <span>Film Details:</span><br/>
         <a href="#/film/<%= id %>" class="film-id"><%= id %></a>
         <span class="film-name"><%= name %></span>
         <span class="film-year"><%= year %></span>
+        <img src="<%= poster%>" alt="poster"/>
+    
     </script>
     <script src="./javascripts/jquery.js"></script>
     <script src="./javascripts/underscore.js"></script>
     <script src="./javascripts/backbone.js"></script>
     <script src="./javascripts/models/Film.js"></script>
+    <script src="./javascripts/models/FilmDetails.js"></script>
     <script src="./javascripts/collections/FilmCollection.js"></script>
     <script src="./javascripts/views/FilmView.js"></script>
+    <script src="./javascripts/views/FilmDetailsView.js"></script>
     <script src="./javascripts/views/FilmCollectionView.js"></script>
     <script src="./javascripts/routers/router.js"></script>
 </body>

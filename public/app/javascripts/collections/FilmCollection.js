@@ -1,3 +1,6 @@
+/* global Backbone */
+var task2 = task2 || {};
+
 var FilmCollection = Backbone.Collection.extend({
 	url: '/api/films',
 	model: Film,
@@ -7,4 +10,4 @@ var FilmCollection = Backbone.Collection.extend({
 
 });
 
-var films = new FilmCollection();
+task2.films = new FilmCollection();

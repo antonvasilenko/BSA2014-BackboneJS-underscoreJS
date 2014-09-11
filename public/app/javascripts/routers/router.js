@@ -20,10 +20,11 @@ var task2 = task2 || {};
         filmDetails: function (id) {
             $('#films-container').hide();
             $('#film-details-container').show();
+            task2.filmDetailsView.model = new FilmDetails();
             console.log('details page called for film id '+ id );
         }
     });
 
-    task2.FilmRouter = new FilmRouter();
+    task2.filmRouter = new FilmRouter();
     Backbone.history.start();
 })();

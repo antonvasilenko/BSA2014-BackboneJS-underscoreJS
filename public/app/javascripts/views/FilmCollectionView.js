@@ -1,7 +1,13 @@
+/* global Backbone */
+var task2 = task2 || {};
+
 var FilmCollectionView = Backbone.View.extend({
 	el: '#films-container',
 	initialize: function(){
 		this.collection.on('add', this.renderNewFilm, this);
+	},
+	events: {
+	    'click button#add': 'addItem'
 	},
 
 	renderNewFilm: function(model){
@@ -9,10 +15,15 @@ var FilmCollectionView = Backbone.View.extend({
 			model: model
 		});
 		this.$el.append(view.$el);
-	}
+	},
+
+	addItem: function () {
+	    var item = new Film();
+	    task2.films.add(item); // add item to collection; view is updated via event 'add'
+	},
 });
 
-var filmsView = new FilmCollectionView({
-	collection: films
+task2.filmsView = new FilmCollectionView({
+	collection: task2.films
 });
 
