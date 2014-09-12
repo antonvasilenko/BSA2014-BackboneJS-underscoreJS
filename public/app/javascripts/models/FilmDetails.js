@@ -7,7 +7,8 @@ var FilmDetails = Backbone.Model.extend({
         year: 2014,
         name: 'noname',
         id: undefined,
-        poster: "./assets/Placeholder.png"
+        poster: "./assets/Placeholder.png",
+        loaded: false
     },
     initialize: function () {
         this.fetch();

@@ -7,14 +7,14 @@ var FilmCollectionView = Backbone.View.extend({
 		this.collection.on('add', this.renderNewFilm, this);
 	},
 	events: {
-	    'click button#add': 'addItem'
+	    'click input#add': 'addItem'
 	},
 
 	renderNewFilm: function(model){
 		var view = new FilmView({
 			model: model
 		});
-		this.$el.append(view.$el);
+		this.$el.find("#films-list-container").append(view.$el);
 	},
 
 	addItem: function () {

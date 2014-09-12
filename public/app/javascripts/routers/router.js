@@ -20,7 +20,7 @@ var task2 = task2 || {};
         filmDetails: function (id) {
             $('#films-container').hide();
             $('#film-details-container').show();
-            task2.filmDetailsView.model = new FilmDetails();
+            task2.filmDetailsView.setModelById(id);
             console.log('details page called for film id '+ id );
         }
     });

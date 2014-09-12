@@ -7,7 +7,14 @@
 </head>
 <body>
     <div id="films-container">
-        <input id="add" type="button" value="Add Film">
+        <h3>List of Films</h3>
+        <div id="film-add-container">
+            <input type="text" id="film-add-name" class="film-name" />
+            <input type="text" id="film-add-year" id="film-add-year" class="film-year" />
+            <input type="button" id="add" value="Add Film" />
+        </div>
+        <div id="films-list-container">
+        </div>
     </div>
     <div id="film-details-container"></div>
     <script type="text/template" id="film-template">
@@ -17,12 +24,10 @@
     </script>
 
     <script type="text/template" id="film-details-template">
-        <span>Film Details:</span><br/>
-        <a href="#/film/<%= id %>" class="film-id"><%= id %></a>
-        <span class="film-name"><%= name %></span>
-        <span class="film-year"><%= year %></span>
-        <img src="<%= poster%>" alt="poster"/>
-    
+        <span class="film-details-name"><%= name %> <%= year %></span>
+        <img src="<%= poster%>" alt="poster" />
+        <br />
+        <a href="#/">Back to list</a>
     </script>
     <script src="./javascripts/jquery.js"></script>
     <script src="./javascripts/underscore.js"></script>
