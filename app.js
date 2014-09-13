@@ -7,36 +7,36 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/api/films', function (req, res) {
-	res.send(filmService.getFilmList());
+    res.send(filmService.getFilmList());
 });
 
 app.get('/api/films/:id', function (req, res) {
-	var film = filmService.getFilmList(req.params.id);
-	if (film){
-		res.send(film);
-	} else {
-		res.send('No film with id ' + req.params.id);
-	}
+    var film = filmService.getFilmList(req.params.id);
+    if (film) {
+        res.send(film);
+    } else {
+        res.send('No film with id ' + req.params.id);
+    }
 });
 
 app.delete('/api/films/:id', function (req, res) {
-	var film = filmService.deleteFilm(req.params.id);
-	res.end();
+    var film = filmService.deleteFilm(req.params.id);
+    res.end();
 });
 
 app.put('/api/films/:id', function (req, res) {
-	var film = filmService.addFilm(req.params.id);
-  filmService.addFilm(req.body);
-  res.status(200);
-	res.end();
+    req.body.id = req.params.id;
+    filmService.addFilm(req.body);
+    res.status(200);
+    res.end();
 });
 
 app.get('/api/filmdetails/:id', function (req, res) {
-	res.send(filmService.getFilm(req.params.id));
+    res.send(filmService.getFilm(req.params.id));
 });
 
-app.get('/', function(req, res){
-	var text = [
+app.get('/', function (req, res) {
+    var text = [
 		'<b>localhost:3000/api/films</b>',
 		'returns the list of films available',
 		'<br />',
@@ -48,7 +48,7 @@ app.get('/', function(req, res){
 		'<br />',
 		'<b>localhost:3000/app</b>',
 		'this is the root of your web app'];
-	res.send(text.join('<br />'));
+    res.send(text.join('<br />'));
 
 });
 

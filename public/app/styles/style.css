@@ -1,4 +1,4 @@
-.film-id{
+﻿.film-id{
 	width: 30px;
 	display: block;
 	float: left;
@@ -24,9 +24,25 @@
 
 .film-container{
 	clear: both;
+    height: 25px;
 }
 
 .film-details-container{
 	clear: both;
 }
+
+.film-container .destroy {
+    display: none;
+	height: 20px;
+	margin: auto 0;
+	font-size: 16px;
+    background-color: transparent;
+    border: 0;
+}
+
+.film-container:hover .destroy {
+    display: inline;
+}
+
+
 

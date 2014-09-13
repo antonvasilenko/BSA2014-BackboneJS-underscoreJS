@@ -9,9 +9,9 @@
     <div id="films-container">
         <h3>List of Films</h3>
         <div id="film-add-container">
-            <input type="text" id="film-add-name" class="film-name" />
-            <input type="text" id="film-add-year" id="film-add-year" class="film-year" />
-            <input type="button" id="add" value="Add Film" />
+            <input type="text" id="film-add-name" class="film-name" placeholder="Enter film name" autofocus="" />
+            <input type="text" id="film-add-year" id="film-add-year" class="film-year" placeholder="and year" />
+            <button id="add">Add Film</button>
         </div>
         <div id="films-list-container">
         </div>
@@ -21,6 +21,7 @@
         <a href="#film/<%= id %>" class="film-id"><%= id %></a>
         <span class="film-name"><%= name %></span>
         <span class="film-year"><%= year %></span>
+        <a href="" class="destroy">Delete</a>
     </script>
 
     <script type="text/template" id="film-details-template">

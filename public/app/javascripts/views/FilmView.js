@@ -6,8 +6,17 @@ var FilmView = Backbone.View.extend({
 		this.render();
 	},
 
+    events: {
+        'click a.destroy': 'clear'
+    },
+
 	render: function(){
 		this.$el.html(this.template(this.model.toJSON()));
 		return this;
+	},
+
+	clear: function () {
+	    this.model.destroy();
+	    this.remove();
 	}
 });
