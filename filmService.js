@@ -34,7 +34,7 @@ var FilmService = function () {
         if (typeof (film.id) != 'number' || film.id < 0) {
             film.id = this.getNextId();
         }
-        this.FilmList.push(film);
+        return this.FilmList.push(film);
     };
 
 
