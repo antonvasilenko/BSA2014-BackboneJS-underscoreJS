@@ -31,6 +31,7 @@
 	clear: both;
 }
 
+/*edit delete buttons for film list item*/
 .film-container .action {
     display: none;
 	height: 20px;
@@ -39,9 +40,22 @@
     background-color: transparent;
     border: 0;
 }
-
 .film-container:hover .action {
     display: inline;
+}
+
+.film-container .film-view-container {
+    display: block;
+}
+.film-container.editing .film-view-container {
+    display: none;
+}
+
+.film-container .film-edit-container {
+    display: none;
+}
+.film-container.editing .film-edit-container {
+    display: block;
 }
 
 

@@ -24,7 +24,8 @@ var FilmCollectionView = Backbone.View.extend({
             year: this.$el.find("#film-add-year").val()
         });
         this.collection.create(item);
-        //this.collection.add(item); // add item to collection; view is updated via event 'add'
+        this.$el.find("#film-add-name").val('');
+        this.$el.find("#film-add-year").val('');
     },
 
 });
