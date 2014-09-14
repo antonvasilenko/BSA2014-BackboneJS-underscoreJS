@@ -29,12 +29,20 @@ var FilmService = function () {
         return _.max(ids) + 1;
     };
 
-    this.addFilm = function (item) {
-        var film = item;
-        if (typeof (film.id) != 'number' || film.id < 0) {
-            film.id = this.getNextId();
+    this.addOrUpdateFilm = function (newFilm) {
+        var existingFilm = _.findWhere(this.FilmList, { id: Number(newFilm.id) });
+        //if (typeof (newFilm.id) != 'number' || newFilm.id < 0) {
+        if (!existingFilm) {
+            // add
+            newFilm.id = this.getNextId();
+            return this.FilmList.push(newFilm);
+        } else {
+            // update
+            existingFilm.name = newFilm.name;
+            existingFilm.year = newFilm.year;
+            return existingFilm;
         }
-        return this.FilmList.push(film);
+        
     };
 
 
