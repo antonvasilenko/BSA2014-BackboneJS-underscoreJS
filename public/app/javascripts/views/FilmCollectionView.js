@@ -18,14 +18,16 @@ var FilmCollectionView = Backbone.View.extend({
     },
 
     addItem: function () {
+        var addName = this.$el.find("#film-add-name");
+        var addYear = this.$el.find("#film-add-year");
         var item = new Film({
             id: task2.filmIdGenerator.getNextId(),
-            name: this.$el.find("#film-add-name").val(),
-            year: this.$el.find("#film-add-year").val()
+            name: addName.val(),
+            year: addYear.val()
         });
         this.collection.create(item);
-        this.$el.find("#film-add-name").val('');
-        this.$el.find("#film-add-year").val('');
+        addName.val('');
+        addYear.val('');
     },
 
 });

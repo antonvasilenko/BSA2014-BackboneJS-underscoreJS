@@ -30,7 +30,15 @@ var FilmView = Backbone.View.extend({
 	    e.preventDefault();
 	    this.$el.addClass('editing');
 	},
-	doneEdit: function (e) {
+
+    intClearView: function() {
+        this.$el.removeClass('editing');
+        $el.find(".film-name").val(this.model.get('name'));
+        $el.find(".film-year").val(this.model.get('name'));
+    },
+
+    doneEdit: function (e) {
+        e.preventDefault();
         var newName = this.$newName.val();
         var newYear = this.$newYear.val();
         if (newName && newYear) {
@@ -40,12 +48,10 @@ var FilmView = Backbone.View.extend({
                 this.render();
             }
         }
-        this.cancelEdit(e);
+        this.intClearView();
     },
-	cancelEdit: function (e) {
-	    e.preventDefault();
-        this.$el.removeClass('editing');
-        $el.find(".film-name").val(this.model.get('name'));
-        $el.find(".film-year").val(this.model.get('name'));
+    cancelEdit: function (e) {
+        e.preventDefault();
+        this.intClearView();
     }
 });
