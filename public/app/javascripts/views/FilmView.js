@@ -7,28 +7,45 @@ var FilmView = Backbone.View.extend({
 	},
 
     events: {
-        'click a.destroy': 'clear',
+        'click a.destroy': 'delete',
         'click a.edit': 'edit',
-        'click a.done': 'doneEdit'
+        'click a.done': 'doneEdit',
+        'click a.cancel': 'cancelEdit'
     },
 
 	render: function(){
-		this.$el.html(this.template(this.model.toJSON()));
+	    this.$el.html(this.template(this.model.toJSON()));
+	    this.$newName = this.$el.find(".film-edit-name");
+	    this.$newYear = this.$el.find(".film-edit-year");
 		return this;
 	},
 
-	clear: function () {
+	delete: function (e) {
+	    e.preventDefault();
 	    this.model.destroy();
 	    this.remove();
-	    return false;
 	},
 
-	edit: function () {
+	edit: function (e) {
+	    e.preventDefault();
 	    this.$el.addClass('editing');
-        return false;
 	},
-    doneEdit: function() {
+	doneEdit: function (e) {
+        var newName = this.$newName.val();
+        var newYear = this.$newYear.val();
+        if (newName && newYear) {
+            if (!this.model.save({ name : newName, year : newYear }))
+                console.log('somethig wrong during save happened');
+            else {
+                this.render();
+            }
+        }
+        this.cancelEdit(e);
+    },
+	cancelEdit: function (e) {
+	    e.preventDefault();
         this.$el.removeClass('editing');
-        return false;
+        $el.find(".film-name").val(this.model.get('name'));
+        $el.find(".film-year").val(this.model.get('name'));
     }
 });
