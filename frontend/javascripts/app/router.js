@@ -1,4 +1,5 @@
-﻿require(['backbone', 'jquery', 'context', '../views/FilmDetailsView'], function (Backbone, $, context, filmDetailsView) {
+﻿require(['backbone', 'jquery', './context', '../views/FilmDetailsView'],
+function (Backbone, $, context, filmDetailsView) {
 
     // Film router
     var FilmRouter = Backbone.Router.extend({

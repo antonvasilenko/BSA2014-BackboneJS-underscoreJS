@@ -13,5 +13,5 @@ require(['backbone', '../app/context'], function(Backbone, context) {
             this.fetch();
         }
     });
-    return new FilmDetails();
+    return FilmDetails;
 });

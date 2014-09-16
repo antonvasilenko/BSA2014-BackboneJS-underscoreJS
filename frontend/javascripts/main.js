@@ -9,4 +9,8 @@ require.config({
 	}
 });
 
-require(['app/context']);
+var task3 = task3 || {};
+
+require(['app/context'], function(context) {
+    
+});

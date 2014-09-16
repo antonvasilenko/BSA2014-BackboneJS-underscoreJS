@@ -32,9 +32,3 @@ require(['backbone', 'underscore', 'jquery', '../models/FilmDetails'], function(
     });
     return FilmDetailsView;
 });
-
-
-
-/*task2.filmDetailsView = new FilmDetailsView({
-    model: task2.filmDetails
-});*/
