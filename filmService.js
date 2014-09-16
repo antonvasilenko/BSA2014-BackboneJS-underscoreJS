@@ -24,7 +24,7 @@ var FilmService = function () {
         this.FilmList = _.reject(this.FilmList, function(item) { return item.id === Number(id); });
     };
 
-    this.getNextId = function () {
+    this.getNextId = function() {
         var ids = _.pluck(this.FilmList, 'id');
         return _.max(ids) + 1;
     };

@@ -1,8 +1,4 @@
-﻿/* global Backbone */
-var task2 = task2 || {};
-
-(function() {
-    'use strict';
+﻿require(['backbone', 'jquery', 'context'], function (Backbone, $, context) {
 
     // Film router
     var FilmRouter = Backbone.Router.extend({
@@ -21,10 +17,11 @@ var task2 = task2 || {};
             $('#films-container').hide();
             $('#film-details-container').show();
             task2.filmDetailsView.setModelById(id);
-            console.log('details page called for film id '+ id );
+            console.log('details page called for film id ' + id);
         }
     });
 
-    task2.filmRouter = new FilmRouter();
+    var router = new FilmRouter();
     Backbone.history.start();
-})();
+    return router;
+});

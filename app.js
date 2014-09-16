@@ -34,7 +34,7 @@ app.get('/api/filmdetails/:id', function (req, res) {
     res.send(filmService.getFilm(req.params.id));
 });
 
-app.get('/', function (req, res) {
+app.get('/api', function (req, res) {
     var text = [
 		'<b>localhost:3000/api/films</b>',
 		'returns the list of films available',
