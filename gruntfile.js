@@ -1,13 +1,13 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        javascripts: ['public/app/javascripts/**/*.js'],
+        javascripts: ['frontend/javascripts/**/*.js'],
         server_js: ['*.js'],
         views: ['frontend/views/**/*.jade'],
         stylesheets: ['frontend/styles/**/*.styl'],
 
         jshint: {
-            client: ['Gruntfile.js', '<%= javascripts %>', '!public/app/javascripts/libs/**/*.js'],
+            client: ['Gruntfile.js', '<%= javascripts %>', '!frontend/javascripts/libs/**/*.js'],
             server: ['<%= server_js %>'],
             options: {
                 sub: true,

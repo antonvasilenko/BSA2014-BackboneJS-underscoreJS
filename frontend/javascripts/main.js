@@ -9,4 +9,4 @@ require.config({
 	}
 });
 
-//require(['app/app']);
+require(['app/context']);
