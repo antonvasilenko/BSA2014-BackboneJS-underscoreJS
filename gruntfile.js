@@ -1,13 +1,13 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		javascripts: ['frontend/javascripts/**/*.js'],
-		server_js: ['backend/**/*.js'],
+		javascripts: ['public/app/javascripts/**/*.js'],
+		server_js: ['*.js'],
 		views: ['frontend/views/**/*.jade'],
 		stylesheets: ['frontend/styles/**/*.styl'],
 
 		jshint: {
-			client: ['Gruntfile.js', '<%= javascripts %>', '!frontend/javascripts/libs/**/*.js'],
+			client: ['Gruntfile.js', '<%= javascripts %>', '!public/app/javascripts/libs/**/*.js'],
 			server: ['<%= server_js %>'],
 			options: {
 				sub: true,
@@ -107,16 +107,17 @@ module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-stylus');
-	grunt.loadNpmTasks('grunt-contrib-jade');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-open');
+	//grunt.loadNpmTasks('grunt-contrib-stylus');
+	//grunt.loadNpmTasks('grunt-contrib-jade');
+	//grunt.loadNpmTasks('grunt-contrib-requirejs');
+	//grunt.loadNpmTasks('grunt-contrib-copy');
+	//grunt.loadNpmTasks('grunt-contrib-clean');
+	//grunt.loadNpmTasks('grunt-open');
 
-	grunt.registerTask('common', ['jshint', 'jade', 'stylus', 'clean']);
-	grunt.registerTask('javascripts', ['jshint', 'clean', 'copy']);
+  grunt.registerTask('debug', ['jshint']);
+	//grunt.registerTask('common', ['jshint', 'jade', 'stylus', 'clean']);
+	//grunt.registerTask('javascripts', ['jshint', 'clean', 'copy']);
 	
-	grunt.registerTask('default', ['common', 'open', 'copy']);
-	grunt.registerTask('release', ['common', 'requirejs', 'copy:libs', 'copy:images', 'copy:resources']);
+	//grunt.registerTask('default', ['common', 'open', 'copy']);
+	//grunt.registerTask('release', ['common', 'requirejs', 'copy:libs', 'copy:images', 'copy:resources']);
 };

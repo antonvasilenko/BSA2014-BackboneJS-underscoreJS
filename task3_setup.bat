@@ -9,3 +9,10 @@ bower install backbone#1.1.2 --save
 rem should be instal locally
 npm install -g grunt-cli
 npm install grunt --save-dev
+
+rem install grunt-related modules
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-requirejs --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-copy --save-dev
+npm install grunt-contrib-clean --save-dev
