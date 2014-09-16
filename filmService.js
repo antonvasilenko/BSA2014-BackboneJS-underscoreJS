@@ -15,14 +15,14 @@ var FilmService = function () {
             }
         } else {
             return _.map(this.FilmList, function (item) {
-                return { name: item.name, year: item.year, id: item.id }
+                return { name : item.name, year : item.year, id : item.id };
             });
         }
     };
 
-    this.deleteFilm = function (id) {
-        this.FilmList = _.reject(this.FilmList, function (item) { return item.id === Number(id); });
-    }
+    this.deleteFilm = function(id) {
+        this.FilmList = _.reject(this.FilmList, function(item) { return item.id === Number(id); });
+    };
 
     this.getNextId = function () {
         var ids = _.pluck(this.FilmList, 'id');
@@ -31,7 +31,6 @@ var FilmService = function () {
 
     this.addOrUpdateFilm = function (newFilm) {
         var existingFilm = _.findWhere(this.FilmList, { id: Number(newFilm.id) });
-        //if (typeof (newFilm.id) != 'number' || newFilm.id < 0) {
         if (!existingFilm) {
             // add
             newFilm.id = this.getNextId();
@@ -42,7 +41,6 @@ var FilmService = function () {
             existingFilm.year = newFilm.year;
             return existingFilm;
         }
-        
     };
 
 

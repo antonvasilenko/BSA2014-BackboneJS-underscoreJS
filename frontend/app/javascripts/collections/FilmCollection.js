@@ -27,6 +27,6 @@ var FilmCollection = Backbone.Collection.extend({
                     id = extId;
             }
         };
-    };
+    }
     task2.filmIdGenerator = new FilmIdGenerator();
 })();

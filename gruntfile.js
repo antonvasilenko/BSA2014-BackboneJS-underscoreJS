@@ -109,14 +109,13 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	//grunt.loadNpmTasks('grunt-contrib-stylus');
 	//grunt.loadNpmTasks('grunt-contrib-jade');
-	//grunt.loadNpmTasks('grunt-contrib-requirejs');
-	//grunt.loadNpmTasks('grunt-contrib-copy');
-	//grunt.loadNpmTasks('grunt-contrib-clean');
-	//grunt.loadNpmTasks('grunt-open');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('debug', ['jshint']);
 	//grunt.registerTask('common', ['jshint', 'jade', 'stylus', 'clean']);
-	//grunt.registerTask('javascripts', ['jshint', 'clean', 'copy']);
+	grunt.registerTask('javascripts', ['jshint', 'clean', 'copy']);
 	
 	//grunt.registerTask('default', ['common', 'open', 'copy']);
 	//grunt.registerTask('release', ['common', 'requirejs', 'copy:libs', 'copy:images', 'copy:resources']);
