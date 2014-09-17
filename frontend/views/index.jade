@@ -1,9 +1,21 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="UTF-8")
-		title hurri
-		link(href="/styles/style.css", rel="stylesheet")
-	body
-		block content
-		script(src="/javascripts/libs/require.js", data-main="/javascripts/main.js")
+    head
+        meta(charset="UTF-8")
+        title Films service (task #3)
+        link(href="/styles/style.css", rel="stylesheet")
+    body
+        #films-container
+            h3 List of Films
+            #film-update-container
+                input#film-add-name.film-name(type="text", placeholder="Enter film name", autofocus="")
+                input#film-add-year.film-year(type="text", placeholder="and year")
+                button#add Add Film
+            #film-list-container
+        #film-details-container
+        script#film-template(type="text/template")
+            .film-view-container
+            .film-edit-container
+        script#film-details-template(type="text/template")
+            span.film-details-name <%= name %> <%= year %>
+        script(src="/javascripts/libs/require.js", data-main="/javascripts/main.js")

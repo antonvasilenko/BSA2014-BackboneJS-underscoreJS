@@ -9,5 +9,5 @@ require.config({
 	}
 });
 
-require(['app/router', 'app/context'], function(router, context) {
+require(['app/router', 'app/context'], function(router, adecontext) {
 });
