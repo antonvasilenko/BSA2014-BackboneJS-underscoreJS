@@ -1,9 +1,12 @@
 var express = require('express'),
-	app = express(),
-  bodyParser = require('body-parser'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    path = require('path'),
 	filmService = require('./filmService');
 
 app.use(express.static(__dirname + '/public'));
+var staticPath = path.normalize(__dirname + '/bower_components');
+app.use('/bower_components', express.static(staticPath));
 app.use(bodyParser.json());
 
 app.get('/api/films', function (req, res) {
@@ -52,4 +55,4 @@ app.get('/api', function (req, res) {
 });
 
 app.listen(3000);
-console.log('Server started on port 3000. Go to localhost:3000 for further instructions');
+console.log('Server started on port 3000. Go to http://localhost:3000/api for further instructions');

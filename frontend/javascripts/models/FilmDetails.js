@@ -1,4 +1,4 @@
-require(['backbone', '../app/context'], function(Backbone, context) {
+define(['backbone'], function(Backbone) {
 
     var FilmDetails = Backbone.Model.extend({
         urlRoot : '/api/filmdetails',

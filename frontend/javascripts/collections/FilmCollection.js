@@ -1,5 +1,5 @@
-define(['backbone', './FilmIdGenerator', '../models/Film'],
-function (Backbone, filmIdGenerator, Film) {
+define(['backbone', 'models/Film', 'collections/FilmIdGenerator'],
+function (Backbone, Film, filmIdGenerator) {
     var FilmCollection = Backbone.Collection.extend({
         url: '/api/films',
         model: Film,

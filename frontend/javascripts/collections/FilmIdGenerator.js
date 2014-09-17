@@ -1,4 +1,4 @@
-﻿require([], function() {
+﻿define([], function() {
     var FilmIdGenerator = function() {
         var id = 0;
         return {
@@ -13,5 +13,5 @@
             }
         };
     };
-    return FilmIdGenerator;
+    return new FilmIdGenerator();
 });

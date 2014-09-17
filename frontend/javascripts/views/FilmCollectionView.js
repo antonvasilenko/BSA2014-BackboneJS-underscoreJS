@@ -1,5 +1,5 @@
-require(['backbone', './FilmView', '../models/Film', '../collections/FilmIdGenerator', '../app/context'],
-function (Backbone, FilmView, Film, filmIdGenerator, context) {
+define(['backbone', 'views/FilmView', 'models/Film', 'collections/FilmIdGenerator'],
+function (Backbone, FilmView, Film, filmIdGenerator) {
 
     var FilmCollectionView = Backbone.View.extend({
         el: '#films-container',

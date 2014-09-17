@@ -1,5 +1,5 @@
-﻿require(['backbone', 'jquery', './context', '../views/FilmDetailsView'],
-function (Backbone, $, context, filmDetailsView) {
+﻿define(['backbone', 'jquery', './context'],
+function (Backbone, $, context) {
 
     // Film router
     var FilmRouter = Backbone.Router.extend({
@@ -18,7 +18,7 @@ function (Backbone, $, context, filmDetailsView) {
             $('#films-container').hide();
             $('#film-details-container').show();
             // TODO remove filmDetails singleton
-            filmDetailsView.setModelById(id);
+            context.filmDetailsView.setModelById(id);
             console.log('details page called for film id ' + id);
         }
     });

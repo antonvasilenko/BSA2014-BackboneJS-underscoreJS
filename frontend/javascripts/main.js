@@ -9,8 +9,5 @@ require.config({
 	}
 });
 
-var task3 = task3 || {};
-
-require(['app/context'], function(context) {
-    
+require(['app/router', 'app/context'], function(router, context) {
 });

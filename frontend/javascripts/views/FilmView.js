@@ -1,4 +1,4 @@
-require(['backbone', 'underscore', 'jquery'], function(Backbone, _, $) {
+define(['backbone', 'underscore', 'jquery'], function(Backbone, _, $) {
     var FilmView = Backbone.View.extend({
         className: 'film-container',
         template: _.template($('#film-template').html()),
