@@ -1,21 +1,22 @@
 {
-    "name": "films-sandbox",
-    "version": "0.0.3",
-    "description": "a sandbox project for JS academy (backbone and related)",
-    "authors": [
-        "toxa07@gmail.com"
-    ],
-    "license": "MIT",
-    "homepage": "https://github.com/antonvasilenko/BSA2014-BackboneJS-underscoreJS",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components"
-    ],
-    "dependencies": {
-        "jquery":  "1.11.1",
-        "backbone": "1.1.2",
-        "underscore": "1.6.0",
-        "requirejs": "*"
-    }
+  "name": "films-sandbox",
+  "version": "0.0.3",
+  "description": "a sandbox project for JS academy (backbone and related)",
+  "authors": [
+    "toxa07@gmail.com"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/antonvasilenko/BSA2014-BackboneJS-underscoreJS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1",
+    "backbone": "1.1.2",
+    "underscore": "1.6.0",
+    "requirejs": "*",
+    "marionette": "~2.2.1"
+  }
 }
