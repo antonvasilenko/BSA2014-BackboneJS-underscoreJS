@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films service (task #3)</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+    <body>
+        <div id="films-container">
+            <h3>List of Films</h3>
+            <div id="film-update-container">
+                <input type="text" id="film-add-name" class="film-name" placeholder="Enter film name" autofocus="" />
+                <input type="text" id="film-add-year" id="film-add-year" class="film-year" placeholder="and year" />
+                <button id="add">Add Film</button>
+            </div>
+            <div id="films-list-container">
+            </div>
+        </div>
+        <div id="film-details-container"></div>
+        <script type="text/template" id="film-template">
+            <div class="film-view-container">
+                <a href="#film/<%= id %>" class="film-id"><%= id %></a>
+                <span class="film-name"><%= name %></span>
+                <span class="film-year"><%= year %></span>
+                <a href="" class="action edit">Edit</a>
+                <a href="" class="action destroy">Delete</a>
+            </div><br/>
+            <div class="film-edit-container">
+                <input type="text" class="film-edit-name film-name"
+                       value="<%= name %>" placeholder="Enter film name" autofocus="" />
+                <input type="text" class="film-edit-year film-year"
+                       value="<%= year %>" placeholder="and year" />
+                <a href="" class="action done">Done</a>
+                <a href="" class="action cancel">Cancel</a>
+            </div>
+        </script>
+
+        <script type="text/template" id="film-details-template">
+            <span class="film-details-name"><%= name %> <%= year %></span>
+            <img src="<%= poster%>" alt="poster" />
+            <br />
+            <a href="#/">Back to list</a>
+        </script>
+        <script data-main="/javascripts/main.js" src="./javascripts/libs/require.js"></script>
+    </body>
+</html>

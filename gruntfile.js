@@ -46,9 +46,7 @@ module.exports = function (grunt) {
                     pretty: true
                 },
                 files: {
-                    'public/index_v2.html': 'frontend/views/index.jade',
-                    'public/404.html': 'frontend/views/404.jade',
-                    //'public/signin.html': 'frontend/views/signin.jade'
+                    'public/index.html': 'frontend/views/index.jade',
                 }
             }
         },
@@ -118,7 +116,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-open');
 
     grunt.registerTask('common', ['jshint', 'jade'/*, 'stylus', 'clean'*/]);
-    grunt.registerTask('javascripts', ['jshint', 'clean', 'jade', 'copy']);
+    grunt.registerTask('frontend', ['jshint', 'clean', 'jade', 'copy']);
     grunt.registerTask('default', ['common', 'open', 'copy']);
     //grunt.registerTask('release', ['common', 'requirejs', 'copy:libs', 'copy:images', 'copy:resources']);
 };

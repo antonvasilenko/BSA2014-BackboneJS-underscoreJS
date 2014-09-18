@@ -1,0 +1,13 @@
+script#film-template(type="text/template")
+    .film-view-container
+        a.film-id(href!="#film/<%= id %>") <%= id %>
+        span.film-name <%= name %>
+        span.film-year <%= year %>
+        a.action.edit(href="") Edit
+        a.action.destroy(href="") Delete
+    br
+    .film-edit-container
+        input.film-edit-name.film-name(type="text", value!="<%= name %>", placeholder="Enter film title", autofocus="")
+        input.film-edit-year.film-year(type="text", value!="<%= year %>", placeholder="and year")
+        a.action.done(href="") Done
+        a.action.cancel(href="") Cancel
