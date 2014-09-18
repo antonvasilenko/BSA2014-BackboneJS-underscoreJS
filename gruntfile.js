@@ -114,5 +114,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-open');
 
     grunt.registerTask('develop', ['jshint', 'clean', 'jade', 'stylus' ,'copy']);
+    grunt.registerTask('javascripts', ['jshint', 'clean:public_js', 'copy']);
     grunt.registerTask('default', ['develop', 'open']);
 };

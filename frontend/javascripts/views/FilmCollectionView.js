@@ -1,5 +1,5 @@
-define(['backbone', 'views/FilmView', 'models/Film', 'collections/FilmIdGenerator'],
-function (Backbone, FilmView, Film, filmIdGenerator) {
+define(['backbone', 'views/FilmView', 'models/Film'],
+function (Backbone, FilmView, Film) {
 
     var FilmCollectionView = Backbone.View.extend({
         el: '#films-container',
@@ -21,7 +21,6 @@ function (Backbone, FilmView, Film, filmIdGenerator) {
             var addName = this.$el.find("#film-add-name");
             var addYear = this.$el.find("#film-add-year");
             var item = new Film({
-                id: filmIdGenerator.getNextId(),
                 name: addName.val(),
                 year: addYear.val()
             });

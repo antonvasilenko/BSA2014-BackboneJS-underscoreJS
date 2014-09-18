@@ -7,6 +7,7 @@ var express = require('express'),
 app.use(express.static(__dirname + '/public'));
 var staticPath = path.normalize(__dirname + '/bower_components');
 app.use('/bower_components', express.static(staticPath));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/api/films', function (req, res) {
@@ -27,9 +28,13 @@ app.delete('/api/films/:id', function (req, res) {
     res.end();
 });
 
+app.post('/api/films', function(req, res){
+    var film = filmService.addFilm(req.body);
+    res.send(film);
+});
+
 app.put('/api/films/:id', function (req, res) {
-    req.body.id = req.params.id;
-    var film = filmService.addOrUpdateFilm(req.body);
+    filmService.updateFilm(req.body);
     res.status(200).end();
 });
 
