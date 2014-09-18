@@ -80,7 +80,8 @@ module.exports = function (grunt) {
         },
 
         clean: {
-            public_js: { src: ['public/javascripts'] }
+            public_js: { src: ['public/javascripts'] },
+            public_html: { src: ['public/*.html'] }
         },
 
         requirejs: {
