@@ -55,7 +55,7 @@ module.exports = function (grunt) {
                 options: {
                     'include css': true,
                     'paths': ['frontend/styles/'],
-                    'compress': true
+                    'compress': false
                 },
                 files: {
                     'public/styles/style.css': ['<%= stylesheets %>']
@@ -109,14 +109,14 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    //grunt.loadNpmTasks('grunt-contrib-stylus');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-open');
 
-    grunt.registerTask('common', ['jshint', 'jade'/*, 'stylus', 'clean'*/]);
+    grunt.registerTask('common', ['jshint', 'jade', 'stylus', 'clean']);
     grunt.registerTask('frontend', ['jshint', 'clean', 'jade', 'copy']);
     grunt.registerTask('default', ['common', 'open', 'copy']);
     //grunt.registerTask('release', ['common', 'requirejs', 'copy:libs', 'copy:images', 'copy:resources']);
