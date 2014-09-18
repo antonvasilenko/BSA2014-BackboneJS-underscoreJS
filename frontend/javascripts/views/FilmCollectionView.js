@@ -24,7 +24,7 @@ function (Backbone, FilmView, Film) {
                 name: addName.val(),
                 year: addYear.val()
             });
-            this.collection.create(item);
+            this.collection.create(item, {wait:true});
             addName.val('');
             addYear.val('');
         },

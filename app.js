@@ -30,7 +30,7 @@ app.delete('/api/films/:id', function (req, res) {
 
 app.post('/api/films', function(req, res){
     var film = filmService.addFilm(req.body);
-    res.send(film);
+    res.json(film);
 });
 
 app.put('/api/films/:id', function (req, res) {
