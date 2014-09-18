@@ -74,9 +74,6 @@ module.exports = function (grunt) {
             js: { files: [{ expand: true, cwd: 'frontend/javascripts/', src: ['**'], dest: 'public/javascripts/' }] },
             assets: { files: [{ expand: true, cwd: 'frontend/assets/', src: ['**'], dest: 'public/assets/' }] },
             images: { files: [{ expand: true, cwd: 'frontend/images/', src: ['**'], dest: 'public/images/' }] },
-            // temp copy
-            html: { files: [{ expand: true, cwd: 'frontend/', src: ['*.html'], dest: 'public/' }] },
-            css: { files: [{ expand: true, cwd: 'frontend/styles/', src: ['*.css'], dest: 'public/styles/' }] }
         },
 
         clean: {
