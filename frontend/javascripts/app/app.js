@@ -1,5 +1,5 @@
-define(['underscore', 'marionette', 'app/AppController'],
-function(_, Marionette, AppController){
+define(['underscore', 'marionette', 'app/AppController', 'app/AppRouter'],
+function (_, Marionette, AppController, AppRouter) {
 
     var MyApp = new Marionette.Application();
 
@@ -10,6 +10,11 @@ function(_, Marionette, AppController){
 
     MyApp.on('start', function(){
         var appController = new AppController();
+        var routes = new AppRouter();
+        if (Backbone.history) {
+            Backbone.history.start();
+        }
     });
 
+    MyApp.start();
 });

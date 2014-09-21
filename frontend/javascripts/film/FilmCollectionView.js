@@ -1,4 +1,4 @@
-define(['backbone', 'views/FilmView', 'models/Film'],
+define(['backbone', './FilmView', './Film'],
 function (Backbone, FilmView, Film) {
 
     var FilmCollectionView = Backbone.View.extend({

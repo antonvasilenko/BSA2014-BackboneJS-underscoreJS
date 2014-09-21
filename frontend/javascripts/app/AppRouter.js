@@ -1,8 +1,10 @@
-﻿define(['backbone', 'jquery', './context'],
-function (Backbone, $, context) {
+﻿define(['marionette', 'jquery', 'app/context'],
+function (Marionette, $, context) {
 
-    // Film router
-    var FilmRouter = Backbone.Router.extend({
+    var AppRouter = Marionette.AppRouter.extend({
+        // TODO: use appRoutes that point to controller methods 
+        // instead of default backbone routes
+
         routes: {
             '': "listFilms",
             'film/:id': "filmDetails"
@@ -22,8 +24,5 @@ function (Backbone, $, context) {
             console.log('details page called for film id ' + id);
         }
     });
-
-    var router = new FilmRouter();
-    Backbone.history.start();
-    return router;
+    return AppRouter;
 });

@@ -1,7 +1,7 @@
-﻿define(['models/FilmDetails',
-        'views/FilmDetailsView',
-        'collections/FilmCollection',
-        'views/FilmCollectionView'],
+﻿define(['details/FilmDetails',
+        'details/FilmDetailsView',
+        'film/FilmCollection',
+        'film/FilmCollectionView'],
 function (FilmDetails, FilmDetailsView, FilmCollection, FilmCollectionView) {
     var detailsModel = new FilmDetails();
     var context = {

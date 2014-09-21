@@ -1,4 +1,4 @@
-define(['backbone', 'models/Film'],
+define(['backbone', './Film'],
 function (Backbone, Film) {
     var FilmCollection = Backbone.Collection.extend({
         url: '/api/films',

@@ -9,5 +9,6 @@ require.config({
 	}
 });
 
-require(['app/app', 'app/router', 'app/context'], function(app, router, adecontext) {
+require(['app/app'], function(app) {
+    var i = 5;
 });
