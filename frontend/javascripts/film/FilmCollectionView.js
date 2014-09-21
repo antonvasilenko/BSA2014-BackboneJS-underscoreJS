@@ -1,5 +1,11 @@
-define(['backbone', './FilmView', './Film'],
-function (Backbone, FilmView, Film) {
+define(['backbone', 'marionette', './FilmView', './Film'],
+function (Backbone, Marionette, FilmView, Film) {
+
+    /*var FilmCollectionsView = Marionette.CompositeView.extend({
+        el: '#films-container',
+        childViewContainer: "#films-list-container",
+        childView: FilmView
+    });*/
 
     var FilmCollectionView = Backbone.View.extend({
         el: '#films-container',

@@ -1,24 +1,25 @@
-define(['backbone', 'underscore', 'jquery'], function(Backbone, _, $) {
-    var FilmView = Backbone.View.extend({
+define(['marionette', 'underscore'],
+function(Marionette, _) {
+
+    var FilmView = Marionette.ItemView.extend({
         className: 'film-container',
-        template: _.template($('#film-template').html()),
-
-        initialize: function () {
-            this.render();
+        template: "#film-template",
+        ui: {
+            newName: ".film-edit-name",
+            newYear: ".film-edit-year"
         },
-
         events: {
             'click a.destroy': 'delete',
             'click a.edit': 'edit',
             'click a.done': 'doneEdit',
             'click a.cancel': 'cancelEdit'
         },
+        modelEvents: {
+            'change': 'render'
+        },
 
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-            this.$newName = this.$el.find(".film-edit-name");
-            this.$newYear = this.$el.find(".film-edit-year");
-            return this;
+        initialize: function () {
+            this.render();
         },
 
         delete: function (e) {
@@ -33,15 +34,16 @@ define(['backbone', 'underscore', 'jquery'], function(Backbone, _, $) {
         },
 
         intClearView: function () {
-            this.$el.removeClass('editing');
-            $el.find(".film-name").val(this.model.get('name'));
-            $el.find(".film-year").val(this.model.get('name'));
+            var root = this.$el;
+            root.removeClass('editing');
+            root.find(".film-name").val(this.model.get('name'));
+            root.find(".film-year").val(this.model.get('year'));
         },
 
         doneEdit: function (e) {
             e.preventDefault();
-            var newName = this.$newName.val();
-            var newYear = this.$newYear.val();
+            var newName = this.ui.newName.val();
+            var newYear = this.ui.newYear.val();
             if (newName && newYear) {
                 if (!this.model.save({ name: newName, year: newYear }))
                     console.log('somethig wrong during save happened');
@@ -56,5 +58,6 @@ define(['backbone', 'underscore', 'jquery'], function(Backbone, _, $) {
             this.intClearView();
         }
     });
+    
     return FilmView;
 });
