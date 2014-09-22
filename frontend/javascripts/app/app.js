@@ -4,13 +4,11 @@ function (_, Marionette, AppController, AppRouter) {
     var MyApp = new Marionette.Application();
 
     MyApp.addRegions({
-        listRegion: '#films-container',
-        detailsRegion: '#film-details-container'
+        filmsRegion: '#films',
     });
 
     MyApp.on('start', function(){
         var appController = new AppController();
-        var routes = new AppRouter();
         if (Backbone.history) {
             Backbone.history.start();
         }

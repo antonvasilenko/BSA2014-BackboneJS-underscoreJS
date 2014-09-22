@@ -24,7 +24,7 @@ function (Marionette, FilmView, Film) {
             this.collection.create(item, { wait: true });
             this.ui.addName.val('');
             this.ui.addYear.val('');
-        },
+        }
 
     });
 
