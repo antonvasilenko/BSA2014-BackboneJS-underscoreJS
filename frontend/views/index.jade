@@ -2,12 +2,7 @@ extends ./base
 
 block content
     #films-container
-        h3 List of Films
-        #film-update-container
-            input#film-add-name.film-name(type="text", placeholder="Enter film name", autofocus="")
-            input#film-add-year.film-year(type="text", placeholder="and year")
-            button#add Add Film
-        #films-list-container
     #film-details-container
+    include ./films-list
     include ./film
     include ./film-details

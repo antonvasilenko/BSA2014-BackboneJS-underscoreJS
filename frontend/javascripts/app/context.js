@@ -9,5 +9,8 @@ function (FilmDetails, FilmDetailsView, FilmCollection, FilmCollectionView) {
         filmDetailsView: new FilmDetailsView({ model: detailsModel }),
         filmsView: new FilmCollectionView({ collection: new FilmCollection() }),
     };
+
+    // VERY IMPORTANT. We should invoke render of the view!
+    context.filmsView.render();
     return context;
 });

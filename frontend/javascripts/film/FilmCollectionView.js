@@ -1,7 +1,8 @@
-define(['backbone', 'marionette', 'film/FilmView', 'film/Film'],
-function (Backbone, Marionette, FilmView, Film) {
+define(['marionette', 'film/FilmView', 'film/Film'],
+function (Marionette, FilmView, Film) {
 
     var FilmCollectionView = Marionette.CompositeView.extend({
+        template: "#films-list-template",
         el: '#films-container',
         childViewContainer: "#films-list-container",
         childView: FilmView,
@@ -12,27 +13,7 @@ function (Backbone, Marionette, FilmView, Film) {
         },
 
         events: {
-            'all': "logEvent",
-            'click button#add': 'addItem'
-        },
-
-        collectionEvents: {
-            'add': "renderNewFilm"
-        },
-
-        logEvent: function (eventName) {
-            console.log(eventName + ' was triggered!');
-        },
-
-        initialize: function () {
-            this.bindUIElements();
-        },
-
-        renderNewFilm: function (model) {
-            var view = new FilmView({
-                model: model
-            });
-            this.ui.list.append(view.$el);
+            'click button#add': 'addItem' //move to controller
         },
 
         addItem: function () {

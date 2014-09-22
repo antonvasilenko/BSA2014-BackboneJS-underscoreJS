@@ -10,16 +10,9 @@ function(Marionette, _) {
         },
         events: {
             'click a.destroy': 'delete',
-            'click a.edit': 'edit',
+            'click a.edit': 'startEdit',
             'click a.done': 'doneEdit',
             'click a.cancel': 'cancelEdit'
-        },
-        modelEvents: {
-            'change': 'render'
-        },
-
-        initialize: function () {
-            this.render();
         },
 
         delete: function (e) {
@@ -28,7 +21,7 @@ function(Marionette, _) {
             this.remove();
         },
 
-        edit: function (e) {
+        startEdit: function (e) {
             e.preventDefault();
             this.$el.addClass('editing');
         },
