@@ -1,7 +1,7 @@
 define(['backbone', 'marionette', 'film/FilmView', 'film/Film'],
 function (Backbone, Marionette, FilmView, Film) {
 
-    var FilmCollectionViewM = Marionette.CompositeView.extend({
+    var FilmCollectionView = Marionette.CompositeView.extend({
         el: '#films-container',
         childViewContainer: "#films-list-container",
         childView: FilmView,
@@ -12,6 +12,7 @@ function (Backbone, Marionette, FilmView, Film) {
         },
 
         events: {
+            'all': "logEvent",
             'click button#add': 'addItem'
         },
 
@@ -19,7 +20,11 @@ function (Backbone, Marionette, FilmView, Film) {
             'add': "renderNewFilm"
         },
 
-        initialize: function() {
+        logEvent: function (eventName) {
+            console.log(eventName + ' was triggered!');
+        },
+
+        initialize: function () {
             this.bindUIElements();
         },
 
@@ -42,6 +47,6 @@ function (Backbone, Marionette, FilmView, Film) {
 
     });
 
-    return FilmCollectionViewM;
+    return FilmCollectionView;
 });
 

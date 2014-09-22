@@ -9,6 +9,14 @@ require.config({
 	}
 });
 
-require(['app/app'], function(app) {
-    var i = 5;
+require(['app/app'], function (app) {
+    /* TODO Question list
+    1. How to intercept and log all events, i.e. from FilmCollectionView
+    2. Provide example of navigation. how router should work? Do we need it at all?
+    3. Is it better to forward click #btnAdd -> to 'film:added' inside same view 
+       or it's redundant?
+    4. Composite view with childView and childView container doesn't attach new collection items.
+       It only works if manually config 'collectionEvents.add' event in options.
+    */
+    
 });
