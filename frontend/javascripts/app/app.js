@@ -3,6 +3,7 @@ function (_, Marionette, AppController, AppRouter) {
 
     var MyApp = new Marionette.Application();
 
+    // TODO do we need this regions here at all, if we defined similar things in Controller
     MyApp.addRegions({
         filmsRegion: '#films',
     });

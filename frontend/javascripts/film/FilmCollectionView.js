@@ -3,7 +3,8 @@ function (Marionette, FilmView, Film) {
 
     var FilmCollectionView = Marionette.CompositeView.extend({
         template: "#films-list-template",
-        el: '#films-container',
+        // WTF why 'el': '#films-container' not working with marionette
+        id: 'films-container',
         childViewContainer: "#films-list-container",
         childView: FilmView,
         ui: {

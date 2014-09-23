@@ -1,34 +1,17 @@
-define(['backbone', 'underscore', 'jquery', './FilmDetails'], function(Backbone, _, $, FilmDetails) {
-    var FilmDetailsView = Backbone.View.extend({
-        el: '#film-details-container',
-        template: _.template($('#film-details-template').html()),
+define(['backbone'],
+function (Backbone) {
+    // TODO rework to user marionette.ItemIvew
+    var FilmDetailsView = Backbone.Marionette.ItemView.extend({
+        // WTF why 'el': '#film-details-container' not working with marionette
+        id: 'film-details-container',
+        template: "#film-details-template",
 
-        initialize: function () {
-            this.render();
-        },
-
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-            return this;
-        },
-
-        setModelById: function (id) {
-            var that = this;
-            if (that.model.get('id') != id) {
-                that.model = new FilmDetails({ id: id });
-            }
-            if (!that.model.get('loaded')) {
-                that.model.fetch({
-                    success: function () {
-                        that.model.set('loaded', true);
-                        that.render();
-                    }
-                });
-            } else {
-                that.render();
-            }
-
-        }
+        // refresh approach #2
+        /*initialize: function() {
+            Backbone.on('filmDetails:loaded', function() {
+                this.render();
+            }, this);
+        }*/
     });
     return FilmDetailsView;
 });

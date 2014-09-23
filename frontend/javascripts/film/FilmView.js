@@ -1,5 +1,5 @@
-define(['marionette', 'underscore'],
-function(Marionette, _) {
+define(['marionette'],
+function(Marionette) {
 
     var FilmView = Marionette.ItemView.extend({
         className: 'film-container',

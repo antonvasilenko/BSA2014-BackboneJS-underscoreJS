@@ -8,9 +8,6 @@ define(['backbone'], function(Backbone) {
             id : undefined,
             poster : "./assets/Placeholder.png",
             loaded : false
-        },
-        initialize : function() {
-            this.fetch();
         }
     });
     return FilmDetails;
