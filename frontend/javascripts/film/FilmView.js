@@ -1,5 +1,5 @@
 define(['marionette'],
-function(Marionette) {
+function (Marionette) {
 
     var FilmView = Marionette.ItemView.extend({
         className: 'film-container',
@@ -13,6 +13,13 @@ function(Marionette) {
             'click a.edit': 'startEdit',
             'click a.done': 'doneEdit',
             'click a.cancel': 'cancelEdit'
+        },
+        behaviors: {
+            Highlight: {
+                selectorName: '.film-name',
+                common: "white",
+                highlighted: "#E6E6FA"
+            }
         },
 
         delete: function (e) {
@@ -51,6 +58,6 @@ function(Marionette) {
             this.intClearView();
         }
     });
-    
+
     return FilmView;
 });

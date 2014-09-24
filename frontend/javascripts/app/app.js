@@ -1,5 +1,5 @@
-define(['underscore', 'marionette', 'app/AppController', 'app/AppRouter'],
-function (_, Marionette, AppController, AppRouter) {
+define(['marionette', 'app/AppController', 'app/AppRouter', 'app/Behavior'],
+function (Marionette, AppController, AppRouter, Behavior) {
 
     var MyApp = new Marionette.Application();
 
@@ -8,7 +8,8 @@ function (_, Marionette, AppController, AppRouter) {
         filmsRegion: '#films',
     });
 
-    MyApp.on('start', function(){
+    MyApp.on('start', function () {
+        var behavior = Behavior;
         var appController = new AppController();
         if (Backbone.history) {
             Backbone.history.start();
