@@ -6,11 +6,12 @@ require.config({
 		underscore: '../../bower_components/underscore/underscore',
 		backbone: '../../bower_components/backbone/backbone',
 		marionette: '../../bower_components/marionette/lib/backbone.marionette',
-		localStorage: './libs/backbone.localStorage'
+		localStorage: './libs/backbone.localStorage',
+		fetchCache: '../../bower_components/backbone-fetch-cache/backbone.fetch-cache'
 	}
 });
 
-require(['app/app', 'localStorage'], function () {
+require(['fetchCache', 'localStorage', 'app/app'], function () {
     /* TODO Question list
     1. How to intercept and log 'all' events, i.e. from FilmCollectionView
     2. Provide example of navigation. how router should work? (development branch)

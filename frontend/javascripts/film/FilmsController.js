@@ -33,6 +33,10 @@ function(Backbone,
             that.filmDetails.view = new FilmDetailsView({ model : model });
             if (!model.get('loaded')) {
                 model.fetch({
+                    cache: true,
+                    prefillSuccess: function() {
+                        console.log('cache hit for film id #' + model.id);
+                    },
                     success : function() {
                         model.set('loaded', true);
                         // refresh approach 1

@@ -1,8 +1,6 @@
 define(['backbone'],
 function (Backbone) {
-    // TODO rework to user marionette.ItemIvew
     var FilmDetailsView = Backbone.Marionette.ItemView.extend({
-        // WTF why 'el': '#film-details-container' not working with marionette
         id: 'film-details-container',
         template: "#film-details-template",
 
