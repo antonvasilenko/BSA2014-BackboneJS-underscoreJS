@@ -17,6 +17,7 @@
     "backbone": "1.1.2",
     "underscore": "1.6.0",
     "requirejs": "*",
-    "marionette": "~2.2.1"
+    "marionette": "~2.2.1",
+    "backbone-fetch-cache": "~1.4.0"
   }
 }

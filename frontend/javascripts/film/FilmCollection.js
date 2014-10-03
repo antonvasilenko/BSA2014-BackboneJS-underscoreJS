@@ -1,5 +1,5 @@
-define(['backbone', './Film'],
-function (Backbone, Film) {
+define(['backbone', './Film', 'localStorage'],
+function (Backbone, Film, localStorage) {
     var FilmCollection = Backbone.Collection.extend({
         url: '/api/films',
         model: Film,

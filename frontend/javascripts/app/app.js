@@ -17,4 +17,9 @@ function (Marionette, AppController, AppRouter, Behavior) {
     });
 
     MyApp.start();
+
+    // TODO:
+    // 1) any real workd sample of localStorage usage.
+    // Is it just shared context between models/views?
+    // Or something more?
 });

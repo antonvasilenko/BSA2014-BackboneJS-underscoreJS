@@ -5,6 +5,10 @@ function (Backbone, $) {
         appRoutes: {
             '': "showFilmsList",
             'film/:id': "showFilmDetails"
+        },
+
+        onRoute: function(name, path, args) {
+            window.localStorage.setItem('currentTab', path);
         }
     });
 
@@ -16,8 +20,9 @@ function (Backbone, $) {
         Backbone.trigger('show:filmsList');
     };
 
-    RouteController.prototype.showFilmDetails = function(id) {
+    RouteController.prototype.showFilmDetails = function (id) {
         console.log('showFilmDetails');
+        window.localStorage.setItem('currentFilmId', id);
         Backbone.trigger('show:filmDetails', id);
     };
 

@@ -5,6 +5,7 @@ bower init
 bower install requirejs --save
 bower install jquery#1.11.1 -- save
 bower install backbone#1.1.2 --save
+bower install backbone-fetch-cache --save
 
 rem should be instal locally
 npm install -g grunt-cli
