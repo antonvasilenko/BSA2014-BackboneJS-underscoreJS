@@ -12,16 +12,14 @@ function (Marionette) {
             };
         },
         initialize: function () {
-            console.log("hover initialized");
+            //console.log("hover initialized");
         },
 
         onShow: function () {
             var that = this;
             that.ui.target.hover(function () {
-                console.log("hover in");
                 that.ui.target.css('background-color', that.options.highlighted);
             }, function () {
-                console.log("hover out");
                 that.ui.target.css('background-color', that.options.common);
             });
         }

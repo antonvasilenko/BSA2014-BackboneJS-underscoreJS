@@ -18,6 +18,7 @@
     "underscore": "1.6.0",
     "requirejs": "*",
     "marionette": "~2.2.1",
-    "backbone-fetch-cache": "~1.4.0"
+    "backbone-fetch-cache": "~1.4.0",
+    "backbone.memento": "~0.4.1"
   }
 }

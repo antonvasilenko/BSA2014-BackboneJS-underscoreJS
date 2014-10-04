@@ -7,7 +7,8 @@ require.config({
 		backbone: '../../bower_components/backbone/backbone',
 		marionette: '../../bower_components/marionette/lib/backbone.marionette',
 		localStorage: './libs/backbone.localStorage',
-		fetchCache: '../../bower_components/backbone-fetch-cache/backbone.fetch-cache'
+		fetchCache: '../../bower_components/backbone-fetch-cache/backbone.fetch-cache',
+		memento: '../../bower_components/backbone.memento/backbone.memento'
 	}
 });
 
