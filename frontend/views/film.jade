@@ -12,8 +12,8 @@ script#film-template(type="text/template")
         a.action.destroy(href="") Delete
     br
     .film-edit-container
-        input.film-edit-name.film-name(type="text", value!="<%= name %>", placeholder="Enter film title", autofocus="")
-        input.film-edit-year.film-year(type="text", value!="<%= year %>", placeholder="and year")
+        input.film-edit-name(type="text", value!="<%= name %>", placeholder="Enter film title", autofocus="")
+        input.film-edit-year(type="text", value!="<%= year %>", placeholder="and year")
         a.action.done(href="") Done
         &nbsp;
         a.action.cancel(href="") Cancel

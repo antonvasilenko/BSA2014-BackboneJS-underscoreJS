@@ -1,26 +1,28 @@
-define(['backbone'],
-function (Backbone) {
+define(['backbone', 'underscore'],
+function (Backbone, _) {
 
     var FilmView = Backbone.Marionette.ItemView.extend({
-        className : 'film-container',
-        template : "#film-template",
-        ui : {
-            newName : ".film-edit-name",
+        className: 'film-container',
+        template: "#film-template",
+        ui: {
+            newName: ".film-edit-name",
             newYear: ".film-edit-year",
+            name: ".film-name",
+            year: ".film-year",
         },
-        events : {
-            'click a.destroy' : 'delete',
-            'click a.edit' : 'startEdit',
-            'click a.save' : 'saveChanges',
-            'click a.undo' : 'undoChanges',
+        events: {
+            'click a.destroy': 'delete',
+            'click a.edit': 'startEdit',
+            'click a.save': 'saveChanges',
+            'click a.undo': 'undoChanges',
             'click a.done': 'doneEdit',
             'click a.cancel': 'cancelEdit'
         },
         behaviors: {
-            Highlight : {
-                selectorName : '.film-name',
-                common : "white",
-                highlighted : "#E6E6FA"
+            Highlight: {
+                selectorName: '.film-name',
+                common: "white",
+                highlighted: "#E6E6FA"
             }
         },
 
@@ -36,10 +38,13 @@ function (Backbone) {
         },
 
         intClearView: function () {
-            var root = this.$el;
-            root.removeClass('editing');
-            root.find(".film-name").val(this.model.get('name'));
-            root.find(".film-year").val(this.model.get('year'));
+            this.$el.removeClass('editing');
+            var name = this.model.get('name');
+            var year = this.model.get('year');
+            this.ui.name.val(name);
+            this.ui.year.val(year);
+            this.ui.newName.val(name);
+            this.ui.newYear.val(year);
         },
 
         doneEdit: function (e) {
@@ -48,13 +53,13 @@ function (Backbone) {
             var newYear = this.ui.newYear.val();
             if (newName && newYear) {
                 this.model.store();
-                this.model.set({ name : newName, year : newYear });
+                this.model.set({ name: newName, year: newYear });
                 this.render();
             }
             this.intClearView();
         },
 
-        undoChanges: function(e) {
+        undoChanges: function (e) {
             e.preventDefault();
             this.model.restore();
             this.render();
@@ -62,9 +67,12 @@ function (Backbone) {
 
         saveChanges: function (e) {
             e.preventDefault();
-            if (!this.model.save())
-                console.log('something wrong during save happened');
-            else {
+            if (!this.model.save()) {
+                if (!this.model.isValid())
+                    alert(_.values(this.model.validationError).join(', '));
+                else
+                    console.log('something wrong during save happened');
+            } else {
                 this.render();
             }
         },

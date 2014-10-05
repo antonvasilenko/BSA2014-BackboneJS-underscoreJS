@@ -19,6 +19,7 @@
     "requirejs": "*",
     "marionette": "~2.2.1",
     "backbone-fetch-cache": "~1.4.0",
-    "backbone.memento": "~0.4.1"
+    "backbone.memento": "~0.4.1",
+    "backbone.validation": "~0.7.1"
   }
 }

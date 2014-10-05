@@ -4,9 +4,10 @@ function (Marionette, AppController, AppRouter, Behavior) {
     var MyApp = new Marionette.Application();
 
     // TODO do we need this regions here at all, if we defined similar things in Controller?
-    MyApp.addRegions({
+    // no, we don't
+    /*MyApp.addRegions({
         filmsRegion: '#films',
-    });
+    });*/
 
     MyApp.on('start', function () {
         var behavior = Behavior;
@@ -17,9 +18,4 @@ function (Marionette, AppController, AppRouter, Behavior) {
     });
 
     MyApp.start();
-
-    // TODO:
-    // 1) any real workd sample of localStorage usage.
-    // Is it just shared context between models/views?
-    // Or something more?
 });
