@@ -51,11 +51,9 @@ function (Backbone, _) {
             e.preventDefault();
             var newName = this.ui.newName.val();
             var newYear = this.ui.newYear.val();
-            if (newName && newYear) {
-                this.model.store();
-                this.model.set({ name: newName, year: newYear });
-                this.render();
-            }
+            this.model.store();
+            this.model.set({ name: newName, year: newYear });
+            this.render();
             this.intClearView();
         },
 
@@ -69,7 +67,7 @@ function (Backbone, _) {
             e.preventDefault();
             if (!this.model.save()) {
                 if (!this.model.isValid())
-                    alert(_.values(this.model.validationError).join(', '));
+                    alert(this.model.getValidationError());
                 else
                     console.log('something wrong during save happened');
             } else {

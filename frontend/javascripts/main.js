@@ -33,5 +33,7 @@ function (Backbone, _) {
     // 1) any real workd sample of localStorage usage.
     // Is it just shared context between models/views?
     // Or something more?
+    // 2) Is there too much logic in FilmView now?
+    // What's better way to move it to controller or to model.
 
 });

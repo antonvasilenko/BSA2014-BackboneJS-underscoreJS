@@ -28,6 +28,14 @@ define(['backbone', 'memento'], function (Backbone) {
                 console.log('validated');
             }, this);
         },
+
+        getValidationError: function() {
+            if (this.validationError) {
+                return _.values(this.validationError).join(', ');
+            } else {
+                return null;
+            }
+        }
     });
     return Film;
 });
